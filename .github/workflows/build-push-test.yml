@@ -58,6 +58,11 @@ jobs:
           username: ${{ secrets.PANUBUILD_QUAYIO_USERNAME }}
           password: ${{ secrets.PANUBUILD_QUAYIO_TOKEN }}
 
+      - name: Setup BATS
+        uses: mig4/setup-bats@v1
+        with:
+          bats-version: 1.7.0
+
       - name: Build & Test
         run:
           make build test
