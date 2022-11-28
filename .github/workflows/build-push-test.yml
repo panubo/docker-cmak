@@ -63,9 +63,19 @@ jobs:
         with:
           bats-version: 1.7.0
 
-      - name: Build & Test
+      - name: Build and export to Docker
+        uses: docker/build-push-action@v3
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: Dockerfile
+          cache-from: type=gha
+          load: true
+          tags: panubo/cmak:test
+
+      - name: Test
         run:
-          make build test
+          make test
 
       - name: Build and Push
         uses: docker/build-push-action@v3

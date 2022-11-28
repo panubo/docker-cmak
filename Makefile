@@ -1,5 +1,5 @@
 NAME       := cmak
-TAG        := latest
+TAG        := test
 IMAGE_NAME := panubo/$(NAME)
 
 .PHONY: *
