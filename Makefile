@@ -24,3 +24,6 @@ shell:  ## get a shell in the image
 
 test:  ## run test suite
 	( cd tests; bats . )
+
+_ci_test:
+	( cd tests; bats . )
