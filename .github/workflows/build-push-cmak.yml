@@ -1,3 +1,5 @@
+# This workflow is based on build-push.yml but contains repo specific changes.
+
 # Panubo build and push to Quay.io and ECR Public
 # This GH Action is intended for public docker images that package upstream applications/services (ie not for projects of Panubo's).
 # For repos that build multiple repos use the multi-build-push.yml workflow.
