@@ -1,4 +1,4 @@
-FROM docker.io/eclipse-temurin:11-jre-alpine
+FROM docker.io/eclipse-temurin:21-jre-alpine
 
 ENV \
   CMAK_VERSION=3.0.0.6 \
