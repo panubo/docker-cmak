@@ -1,4 +1,4 @@
-FROM docker.io/eclipse-temurin:11-jre-alpine
+FROM docker.io/eclipse-temurin:21-jre-alpine
 
 ENV \
   CMAK_VERSION=3.0.0.6 \
@@ -24,4 +24,7 @@ WORKDIR /cmak
 USER cmak
 
 ENTRYPOINT ["tini"]
-CMD ["/cmak/bin/cmak", "-Dpidfile.path=/dev/null", "-Dapplication.home=/cmak", ""]
+# Arguments `--add-opens` and `--add-exports` added due to new versions of
+# Java. See Github issue https://github.com/yahoo/CMAK/issues/844 for more
+# details
+CMD ["/cmak/bin/cmak", "-Dpidfile.path=/dev/null", "-Dapplication.home=/cmak", "-J--add-opens=java.base/sun.net.www.protocol.file=ALL-UNNAMED", "-J--add-exports=java.base/sun.net.www.protocol.file=ALL-UNNAMED"]
