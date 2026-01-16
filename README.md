@@ -1,4 +1,6 @@
-# Docker CMAK
+# Docker CMAK (Cluster Manager for Apache Kafka)
+
+[![build and push on main and tags](https://github.com/panubo/docker-cmak/actions/workflows/build-push.yml/badge.svg)](https://github.com/panubo/docker-cmak/actions/workflows/build-push.yml)
 
 Docker image of [yahoo/CMAK](https://github.com/yahoo/CMAK).
 
